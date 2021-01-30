@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/python-audit-log.git",
-        "sha": "8551616639a26e025303aa5bd6d23d412490ae3f"
+        "sha": "8834dbe346b3369bac8829f27b1de5017f28b4ba"
       }
     },
     {
