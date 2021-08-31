@@ -17,6 +17,13 @@ import os
 from pathlib import Path
 import nox
 
+
+nox.options.sessions = [
+    "unit",
+    "blacken",
+    "lint_setup_py",
+]
+
 # Error if a python version is missing
 nox.options.error_on_missing_interpreters = True
 
