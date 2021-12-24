@@ -2,14 +2,15 @@
     "name": "auditlog",
     "name_pretty": "Audit Log",
     "product_documentation": "https://github.com/googleapis/python-audit-log",
-    "client_documentation": "https://github.com/googleapis/python-audit-log",
+    "client_documentation": "https://cloud.google.com/python/docs/reference/auditlog/latest",
     "issue_tracker": "",
-    "release_level": "beta",
+    "release_level": "preview",
     "language": "python",
     "library_type": "OTHER",
     "repo": "googleapis/python-audit-log",
     "distribution_name": "google-cloud-audit-log",
     "api_id": "",
     "default_version": "",
-    "codeowner_team": ""
+    "codeowner_team": "",
+    "api_shortname": "auditlog"
 }
