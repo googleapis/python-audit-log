@@ -2,7 +2,7 @@
     "name": "auditlog",
     "name_pretty": "Audit Log",
     "product_documentation": "https://github.com/googleapis/python-audit-log",
-    "client_documentation": "https://cloud.google.com/python/docs/reference/auditlog/latest",
+    "client_documentation": "https://github.com/googleapis/python-audit-log",
     "issue_tracker": "",
     "release_level": "preview",
     "language": "python",
