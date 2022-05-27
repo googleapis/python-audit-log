@@ -23,7 +23,7 @@ description = "Google Cloud Audit Protos"
 version = "0.2.2"
 release_status = "Development Status :: 4 - Beta"
 dependencies = [
-    "protobuf >= 3.6.0, <4.0.0dev",
+    "protobuf >=4.21.1, <4.22.0",
     "googleapis-common-protos >= 1.56.2, < 2.0dev",
 ]
 
