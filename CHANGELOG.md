@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/googleapis/python-audit-log/compare/v0.2.5...v0.3.0) (2023-12-01)
+
+
+### Features
+
+* Add support for Python 3.12 ([#113](https://github.com/googleapis/python-audit-log/issues/113)) ([08b0bca](https://github.com/googleapis/python-audit-log/commit/08b0bca0ee634d65bba18c7de102063be17d0958))
+
 ## [0.2.5](https://github.com/googleapis/python-audit-log/compare/v0.2.4...v0.2.5) (2023-01-07)
 
 
