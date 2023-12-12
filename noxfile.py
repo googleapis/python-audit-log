@@ -18,6 +18,8 @@ from pathlib import Path
 import nox
 
 
+UNIT_TEST_PYTHON_VERSIONS = ["3.7", "3.8", "3.9", "3.10", "3.11", "3.12"]
+
 nox.options.sessions = [
     "unit",
     "blacken",
@@ -96,7 +98,7 @@ def default(session):
         *session.posargs,
     )
 
-@nox.session(python="3.8")
+@nox.session(python=UNIT_TEST_PYTHON_VERSIONS)
 def unit(session):
     """Run the unit test suite."""
     default(session)

@@ -16,7 +16,7 @@ import io
 import os
 
 import setuptools
-from setuptools import setup, find_packages
+from setuptools import find_namespace_packages
 
 name = "google-cloud-audit-log"
 description = "Google Cloud Audit Protos"
@@ -34,6 +34,13 @@ with io.open(readme_filename, encoding="utf-8") as readme_file:
     readme = readme_file.read()
 
 
+# Only include packages under the 'google' namespace. Do not include tests,
+# benchmarks, etc.
+packages = [
+    package for package in setuptools.find_packages() if package.startswith("google")
+]
+
+
 setuptools.setup(
     name=name,
     version=version,
@@ -45,7 +52,6 @@ setuptools.setup(
         "License :: OSI Approved :: Apache Software License",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
@@ -59,10 +65,9 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     install_requires=dependencies,
     license="Apache-2.0",
-    packages=find_packages(),
+    packages=packages,
     package_data={"": ["*.proto"]},
     python_requires=">=3.7",
-    namespace_packages=["google", "google.cloud"],
     url="https://github.com/googleapis/python-audit-log",
     include_package_data=True,
 )
