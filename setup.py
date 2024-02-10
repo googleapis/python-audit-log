@@ -65,7 +65,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     install_requires=dependencies,
     license="Apache-2.0",
-    packages=packages,
+    packages=find_namespace_packages(exclude=("tests*", "testing*")),
     package_data={"": ["*.proto"]},
     python_requires=">=3.7",
     url="https://github.com/googleapis/python-audit-log",
