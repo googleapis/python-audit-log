@@ -24,7 +24,7 @@ from synthtool.sources import git
 GOOGLEAPIS_REPO = "googleapis/googleapis"
 
 # Clean up googleapis
-shutil.rmtree('googleapis', ignore_errors=True)
+shutil.rmtree("googleapis", ignore_errors=True)
 
 # Clone googleapis
 googleapis_url = git.make_repo_clone_url(GOOGLEAPIS_REPO)
@@ -34,7 +34,13 @@ subprocess.run(["git", "clone", googleapis_url])
 s._tracked_paths.add("googleapis")
 
 # Create folders for dependencies of the protos that we want to compile
-common_apis = ["google/api","google/iam/v1","google/rpc/context","google/type"]
+common_apis = [
+    "google/api",
+    "google/iam/v1",
+    "google/rpc",
+    "google/rpc/context",
+    "google/type",
+]
 _ = [os.makedirs(dir, exist_ok=True) for dir in common_apis]
 
 # Copy dependencies of the protos that we want to compile from googleapis
@@ -48,7 +54,7 @@ s.copy("googleapis/google/type/*.proto", "google/type")
 s.copy("googleapis/google/cloud/audit/*.proto", "google/cloud/audit")
 
 # Clean up googleapis
-shutil.rmtree('googleapis')
+shutil.rmtree("googleapis")
 
 # ----------------------------------------------------------------------------
 #  Add templated files
