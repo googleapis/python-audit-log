@@ -78,7 +78,7 @@ s.shell.run(["nox", "-s", "generate_protos"], hide_output=False)
 
 # Clean up the folders for dependencies which are shipped via `googleapis-common-protos`
 # We should not ship them via this repository
-_ = [shutil.rmtree(dir) for dir in common_apis]
+_ = [shutil.rmtree(dir, ignore_errors=True) for dir in common_apis]
 
 s.shell.run(["nox", "-s", "blacken"], hide_output=False)
 
