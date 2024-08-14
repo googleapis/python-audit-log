@@ -17,6 +17,8 @@ import subprocess
 import sys
 
 
+# See https://docs.pytest.org/en/stable/how-to/tmp_path.html#the-tmp-path-fixture
+# for more information on the `tmp_path` fixture of pytest
 def test_namespace_package_compat(tmp_path):
     # The ``google`` namespace package should not be masked
     # by the presence of ``google-cloud-audit-log``.
