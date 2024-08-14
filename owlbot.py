@@ -34,10 +34,8 @@ subprocess.run(["git", "clone", googleapis_url])
 s._tracked_paths.add("googleapis")
 
 # Create folders for dependencies of the protos that we want to compile
-os.makedirs("google/api", exist_ok=True)
-os.makedirs("google/iam/v1", exist_ok=True)
-os.makedirs("google/rpc/context", exist_ok=True)
-os.makedirs("google/type", exist_ok=True)
+common_apis = ["google/api","google/iam/v1","google/rpc/context","google/type"]
+_ = [os.makedirs(dir, exist_ok=True) for dir in common_apis]
 
 # Copy dependencies of the protos that we want to compile from googleapis
 s.copy("googleapis/google/api/*.proto", "google/api")
@@ -74,10 +72,7 @@ s.shell.run(["nox", "-s", "generate_protos"], hide_output=False)
 
 # Clean up the folders for dependencies which are shipped via `googleapis-common-protos`
 # We should not ship them via this repository
-shutil.rmtree('google/api')
-shutil.rmtree("google/iam")
-shutil.rmtree('google/rpc')
-shutil.rmtree("google/type")
+_ = [shutil.rmtree(dir) for dir in common_apis]
 
 s.shell.run(["nox", "-s", "blacken"], hide_output=False)
 
