@@ -163,12 +163,12 @@ def install_prerelease_dependencies(session, constraints_path):
 @nox.parametrize(
     "library,prerelease,protobuf_implementation",
     [
-        (("python-pubsub", None), False, "python"),
-        (("python-pubsub", None), False, "upb"),
-        (("python-pubsub", None), False, "cpp"),
-        (("python-pubsub", None), True, "python"),
-        (("python-pubsub", None), True, "upb"),
-        (("python-pubsub", None), True, "cpp"),
+        (("python-logging", None), False, "python"),
+        (("python-logging", None), False, "upb"),
+        (("python-logging", None), False, "cpp"),
+        (("python-logging", None), True, "python"),
+        (("python-logging", None), True, "upb"),
+        (("python-logging", None), True, "cpp"),
     ],
 )
 def unit_remote(session, library, prerelease, protobuf_implementation):
