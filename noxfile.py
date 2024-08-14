@@ -208,6 +208,8 @@ def unit_remote(session, library, prerelease, protobuf_implementation):
 
         install_command = ["-e", downstream_dir]
 
+        # include dependencies needed for testing python-logging
+        session.install("django", "flask")
         if prerelease:
             install_prerelease_dependencies(
                 session,
