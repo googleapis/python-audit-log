@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.3.0](https://github.com/googleapis/python-audit-log/compare/v0.2.5...v0.3.0) (2024-08-15)
+## [0.3.0rc0](https://github.com/googleapis/python-audit-log/compare/v0.2.5...v0.3.0rc0) (2024-08-15)
 
 
 ### Features
