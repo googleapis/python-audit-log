@@ -145,6 +145,8 @@ def install_prerelease_dependencies(session, constraints_path):
             "google-auth",
             "proto-plus",
             "google-cloud-testutils",
+            "google-cloud-appengine-logging",
+            "grpc-google-iam-v1",
             # dependencies of google-cloud-testutils"
             "click",
         ]
@@ -209,7 +211,7 @@ def unit_remote(session, library, prerelease, protobuf_implementation):
         install_command = ["-e", downstream_dir]
 
         # include dependencies needed for testing python-logging
-        session.install("django", "flask")
+        session.install("django", "flask", "opentelemetry-api")
         if prerelease:
             install_prerelease_dependencies(
                 session,
